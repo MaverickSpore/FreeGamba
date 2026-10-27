@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
@@ -46,9 +47,9 @@ public class SceneManager : MonoBehaviour
     }
     public void LoadGameChoiceScene()
     {
-        StartCoroutine(LoadGameChoice());
+        StartCoroutine(LoadGameSelection());
     }
-    private IEnumerator LoadGameChoice()
+    private IEnumerator LoadGameSelection()
     {
         if (GameChoiceScene != null)
         {
@@ -59,12 +60,35 @@ public class SceneManager : MonoBehaviour
             }
             if (GameManager.Instance != null)
             {
-                GameManager.Instance.LoadRequiredPrefabsGeneric();
+                GameManager.Instance.LoadRequiredPrefabsGameSelection();
             }
         }
         else
         {
             Debug.LogError("GameChoiceScene is not assigned in the SceneManager.");
+        }
+    }
+    public void LoadSceneGeneric(SceneAsset asset, List<GameObject> requiredPrefabs)
+    {
+        if (asset != null)
+        {
+            StartCoroutine(LoadSceneGenericCoroutine(asset, requiredPrefabs));
+        }
+        else
+        {
+            Debug.LogError("SceneAsset is not assigned in the SceneManager.");
+        }
+    }
+    private IEnumerator LoadSceneGenericCoroutine(SceneAsset asset, List<GameObject> requiredPrefabs)
+    {
+        AsyncOperation asyncLoad = UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(asset.name);
+        while (!asyncLoad.isDone)
+        {
+            yield return null;
+        }
+        if (GameManager.Instance != null)
+        {
+            GameManager.Instance.LoadRequiredPrefabsGeneric(requiredPrefabs);
         }
     }
 }

@@ -14,5 +14,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/OfficialScenes/GameChoice.unity
     guid: 012f91a5d5308bb48ba0824f4c07fb69
+  - enabled: 1
+    path: Assets/Scenes/OfficialScenes/CardPacks.unity
+    guid: 45f36b9a20c5d5645907ddd54298bb2f
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}

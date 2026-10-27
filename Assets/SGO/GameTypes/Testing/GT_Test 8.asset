@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a579a90f3e129a47ac3c45777f60683, type: 3}
+  m_Name: GT_Test 8
+  m_EditorClassIdentifier: Assembly-CSharp::SGOGameType
+  gameTypeName: Testing 8
+  gameTypeImage: {fileID: 0}
+  scene: {fileID: 102900000, guid: 45f36b9a20c5d5645907ddd54298bb2f, type: 3}
+  requiredPrefabs:
+  - {fileID: 4668463013001828990, guid: fbb32e97c96999047b8f4cca145d148b, type: 3}

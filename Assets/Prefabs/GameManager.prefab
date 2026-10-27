@@ -51,3 +51,5 @@ MonoBehaviour:
   - {fileID: 3725979023658127062, guid: edfa35b51a565a94e88f35d84c575a26, type: 3}
   RequiredPrefabsMainMenu:
   - {fileID: 3440380066719391278, guid: f53fd2f7b26b7b948bfb99c09bc4ef9b, type: 3}
+  RequiredPrefabsGameSelection:
+  - {fileID: 8916266496489260779, guid: 1e5adeec838f40c4a8de04f3c73f547a, type: 3}
