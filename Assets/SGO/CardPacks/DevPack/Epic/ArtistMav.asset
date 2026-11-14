@@ -10,11 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: aab6738ac52bf274cbaaa30a848dc24a, type: 3}
-  m_Name: LeadDevMav
+  m_Name: ArtistMav
   m_EditorClassIdentifier: Assembly-CSharp::SGOCard
-  cardName: Maverick the Lead Dev
-  cardDescription: MaverickSpore, the Lead Dev, training junior developers
+  cardName: Maverick the Artist
+  cardDescription: MaverickSpore making art? That's a good one!
   cardImage: {fileID: 0}
-  cardCost: 20
-  cardID: 1
-  cardRarity: 3
+  cardID: A0
+  cardRarity: 4

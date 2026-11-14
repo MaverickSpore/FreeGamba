@@ -7,11 +7,11 @@ using UnityEngine.UI;
 public class SGOGameType : ScriptableObject
 {
     [SerializeField] string gameTypeName;
-    [SerializeField] Image gameTypeImage;
+    [SerializeField] Sprite gameTypeImage;
     [SerializeField] SceneAsset scene;
     [SerializeField] List<GameObject> requiredPrefabs;
     public string Name => gameTypeName;
-    public Image Image => gameTypeImage;
+    public Sprite Image => gameTypeImage;
     public SceneAsset Scene => scene;
     public List<GameObject> RequiredPrefabs => requiredPrefabs;
 }

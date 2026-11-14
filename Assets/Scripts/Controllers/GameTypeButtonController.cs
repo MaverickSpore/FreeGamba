@@ -14,7 +14,7 @@ public class GameTypeButtonController : MonoBehaviour
         if (Name != null)
             Name.text = GameType.Name;
         if (Image != null && GameType.Image != null)
-            Image.sprite = GameType.Image.sprite;
+            Image.sprite = GameType.Image;
     }
     public void OnButtonClick()
     {

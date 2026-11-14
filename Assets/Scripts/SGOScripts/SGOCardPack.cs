@@ -6,9 +6,9 @@ using UnityEngine.UI;
 public class SGOCardPack : ScriptableObject
 {
     [SerializeField] List<SGOCard> cards;
-    [SerializeField] Image image;
+    [SerializeField] Sprite image;
     [SerializeField] int cardCount;
     public List<SGOCard> Cards => cards;
-    public Image Image => image;
+    public Sprite Image => image;
     public int CardCount => cardCount;
 }

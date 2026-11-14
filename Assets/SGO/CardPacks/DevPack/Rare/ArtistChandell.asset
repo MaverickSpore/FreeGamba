@@ -15,6 +15,5 @@ MonoBehaviour:
   cardName: Chandell the Artist
   cardDescription: Modeling, drawing, painting, and more
   cardImage: {fileID: 0}
-  cardCost: 10
-  cardID: 3
-  cardRarity: 4
+  cardID: A1
+  cardRarity: 3

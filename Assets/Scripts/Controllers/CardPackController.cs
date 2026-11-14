@@ -15,7 +15,7 @@ public class CardPackController : MonoBehaviour
         CardPack = cardPack;
         if (CardPackImage != null && CardPack.Image != null)
         {
-            CardPackImage.sprite = CardPack.Image.sprite;
+            CardPackImage.sprite = CardPack.Image;
         }
         else
         {

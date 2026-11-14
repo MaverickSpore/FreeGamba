@@ -18,5 +18,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: f5155d1df3fc99143a26295e2ba57684, type: 2}
   - {fileID: 11400000, guid: 1f80f46e5f7ce5c4bb3652da598e6874, type: 2}
   - {fileID: 11400000, guid: ec65e9f2cbc1a974a96b0dd022788110, type: 2}
+  - {fileID: 11400000, guid: f3c23703dfd07004d99a660758d48341, type: 2}
+  - {fileID: 11400000, guid: 03f4b98176289554f812c8336f2ee8f6, type: 2}
+  - {fileID: 11400000, guid: 38d8d3931cb06a845816ceed786faa92, type: 2}
   image: {fileID: 0}
   cardCount: 5

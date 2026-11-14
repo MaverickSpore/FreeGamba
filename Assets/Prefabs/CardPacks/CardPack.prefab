@@ -51,8 +51,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f01675c2be5c9d94a8c12b4f0c061f3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CardPackController
-  CardPrefab: {fileID: 4168985614423878540, guid: dcfb70f196d9ab44f8663e9c5c6dc60f, type: 3}
-  CardPackImage: {fileID: 0}
+  CardPackImage: {fileID: 9129274309481008665}
   DefaultCardPack: {fileID: 11400000, guid: cf554e5f3788f824c9d80606c1728c42, type: 2}
 --- !u!222 &1402191144371036086
 CanvasRenderer:
