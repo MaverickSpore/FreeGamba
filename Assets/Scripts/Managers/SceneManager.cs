@@ -1,13 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
 
 public class SceneManager : MonoBehaviour
 {
     public static SceneManager Instance;
-    [SerializeField] private SceneAsset MainMenuScene;
-    [SerializeField] private SceneAsset GameChoiceScene;
+    [SerializeField] private int MainMenu;
+    [SerializeField] private int Settings;
+    [SerializeField] private int GameChoice;
 
     private void Awake()
     {
@@ -28,21 +28,30 @@ public class SceneManager : MonoBehaviour
     }
     private IEnumerator LoadMainMenu()
     {
-        if (MainMenuScene != null)
+        AsyncOperation asyncLoad = UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(MainMenu);
+        while (!asyncLoad.isDone)
         {
-            AsyncOperation asyncLoad = UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(MainMenuScene.name);
-            while (!asyncLoad.isDone)
-            {
-                yield return null;
-            }
-            if (GameManager.Instance != null)
-            {
-                GameManager.Instance.LoadRequiredPrefabsMainMenu();
-            }
+            yield return null;
         }
-        else
+        if (GameManager.Instance != null)
         {
-            Debug.LogError("MainMenuScene is not assigned in the SceneManager.");
+            GameManager.Instance.LoadRequiredPrefabsMainMenu();
+        }
+    }
+    public void LoadSettingsScene()
+    {
+        StartCoroutine(LoadSettings());
+    }
+    private IEnumerator LoadSettings()
+    {
+        AsyncOperation asyncLoad = UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(Settings);
+        while (!asyncLoad.isDone)
+        {
+            yield return null;
+        }
+        if (GameManager.Instance != null)
+        {
+            GameManager.Instance.LoadRequiredPrefabsSettings();
         }
     }
     public void LoadGameChoiceScene()
@@ -51,37 +60,30 @@ public class SceneManager : MonoBehaviour
     }
     private IEnumerator LoadGameSelection()
     {
-        if (GameChoiceScene != null)
+        AsyncOperation asyncLoad = UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(GameChoice);
+        while (!asyncLoad.isDone)
         {
-            AsyncOperation asyncLoad = UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(GameChoiceScene.name);
-            while (!asyncLoad.isDone)
-            {
-                yield return null;
-            }
-            if (GameManager.Instance != null)
-            {
-                GameManager.Instance.LoadRequiredPrefabsGameSelection();
-            }
+            yield return null;
         }
-        else
+        if (GameManager.Instance != null)
         {
-            Debug.LogError("GameChoiceScene is not assigned in the SceneManager.");
+            GameManager.Instance.LoadRequiredPrefabsGameSelection();
         }
     }
-    public void LoadSceneGeneric(SceneAsset asset, List<GameObject> requiredPrefabs)
+    public void LoadSceneGeneric(int sceneIndex, List<GameObject> requiredPrefabs)
     {
-        if (asset != null)
+        if (sceneIndex >= 0)
         {
-            StartCoroutine(LoadSceneGenericCoroutine(asset, requiredPrefabs));
+            StartCoroutine(LoadSceneGenericCoroutine(sceneIndex, requiredPrefabs));
         }
         else
         {
             Debug.LogError("SceneAsset is not assigned in the SceneManager.");
         }
     }
-    private IEnumerator LoadSceneGenericCoroutine(SceneAsset asset, List<GameObject> requiredPrefabs)
+    private IEnumerator LoadSceneGenericCoroutine(int sceneIndex, List<GameObject> requiredPrefabs)
     {
-        AsyncOperation asyncLoad = UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(asset.name);
+        AsyncOperation asyncLoad = UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(sceneIndex);
         while (!asyncLoad.isDone)
         {
             yield return null;

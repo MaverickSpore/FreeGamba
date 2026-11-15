@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -9,6 +10,7 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] List<GameObject> RequiredPrefabsGeneric;
     [SerializeField] List<GameObject> RequiredPrefabsMainMenu;
+    [SerializeField] List<GameObject> RequiredPrefabsSettings;
     [SerializeField] List<GameObject> RequiredPrefabsGameSelection;
 
     private void Awake()
@@ -22,7 +24,8 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        PlayerInput = new PlayerInput();
+        if (PlayerInput == null)
+            PlayerInput = new PlayerInput();
     }
     private void OnEnable()
     {
@@ -58,9 +61,15 @@ public class GameManager : MonoBehaviour
         LoadRequiredPrefabsGeneric();
         LoadRequirePrefabs(RequiredPrefabsMainMenu);
     }
+    public void LoadRequiredPrefabsSettings()
+    {
+        LoadRequiredPrefabsGeneric();
+        LoadRequirePrefabs(RequiredPrefabsSettings);
+    }
     public void LoadRequiredPrefabsGameSelection()
     {
         LoadRequiredPrefabsGeneric();
         LoadRequirePrefabs(RequiredPrefabsGameSelection);
     }
+
 }

@@ -18,7 +18,7 @@ public class GameTypeButtonController : MonoBehaviour
     }
     public void OnButtonClick()
     {
-        if (GameType != null && GameType.Scene != null)
+        if (GameType != null && GameType.Scene >= 0)
         {
             if (SceneManager.Instance != null)
             {

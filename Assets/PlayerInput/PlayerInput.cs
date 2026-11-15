@@ -1164,9 +1164,9 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": true
                 },
                 {
-                    ""name"": ""positive"",
-                    ""id"": ""bcb0d24b-ee5f-48b3-9431-92ccdbf418ac"",
-                    ""path"": ""<Keyboard>/downArrow"",
+                    ""name"": ""negative"",
+                    ""id"": ""8df984be-ec8b-4a9d-92c5-a32f943348a2"",
+                    ""path"": ""<Keyboard>/w"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -1175,20 +1175,31 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": true
                 },
                 {
-                    ""name"": ""1D Axis"",
-                    ""id"": ""deddc1de-9d7d-4307-adfe-f6a6768abefc"",
-                    ""path"": ""1DAxis"",
+                    ""name"": ""negative"",
+                    ""id"": ""f9fb9ddb-91d0-4802-9d4e-f947c560c52f"",
+                    ""path"": ""<Gamepad>/leftStick/up"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""NavList"",
-                    ""isComposite"": true,
-                    ""isPartOfComposite"": false
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
                 },
                 {
                     ""name"": ""negative"",
-                    ""id"": ""8df984be-ec8b-4a9d-92c5-a32f943348a2"",
-                    ""path"": ""<Keyboard>/w"",
+                    ""id"": ""140bfc1d-f90f-4cdb-992a-ae1c4057e097"",
+                    ""path"": ""<Touchscreen>/delta/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""NavList"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""bcb0d24b-ee5f-48b3-9431-92ccdbf418ac"",
+                    ""path"": ""<Keyboard>/downArrow"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -1208,20 +1219,9 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": true
                 },
                 {
-                    ""name"": ""1D Axis"",
-                    ""id"": ""40bbcedd-4588-4eec-9bab-1f867484552c"",
-                    ""path"": ""1DAxis"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""NavList"",
-                    ""isComposite"": true,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""negative"",
-                    ""id"": ""f9fb9ddb-91d0-4802-9d4e-f947c560c52f"",
-                    ""path"": ""<Gamepad>/leftStick/up"",
+                    ""name"": ""positive"",
+                    ""id"": ""ab83425a-3ce2-4ae1-91ec-b62efde58827"",
+                    ""path"": ""<Gamepad>/leftStick/down"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -1231,8 +1231,8 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": ""positive"",
-                    ""id"": ""ab83425a-3ce2-4ae1-91ec-b62efde58827"",
-                    ""path"": ""<Gamepad>/leftStick/down"",
+                    ""id"": ""a0495ccf-c712-43ed-8115-68ff19ab1779"",
+                    ""path"": ""<Touchscreen>/delta/up"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
