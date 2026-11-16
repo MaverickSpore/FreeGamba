@@ -49,7 +49,10 @@ MonoBehaviour:
   - {fileID: 9212627958412162556, guid: 2d62194bd8c47924b89f56d7b592f662, type: 3}
   - {fileID: 8481582825921119568, guid: 37e8aefb31ace0c408930df956ba82da, type: 3}
   - {fileID: 3725979023658127062, guid: edfa35b51a565a94e88f35d84c575a26, type: 3}
+  - {fileID: 260805729309981302, guid: 496159484f7224a418de575413b53e5c, type: 3}
   RequiredPrefabsMainMenu:
   - {fileID: 3440380066719391278, guid: f53fd2f7b26b7b948bfb99c09bc4ef9b, type: 3}
+  - {fileID: 7079228100854818443, guid: 1efd68118351e4348a6d72a4c94f04cc, type: 3}
+  RequiredPrefabsSettings: []
   RequiredPrefabsGameSelection:
   - {fileID: 8916266496489260779, guid: 1e5adeec838f40c4a8de04f3c73f547a, type: 3}

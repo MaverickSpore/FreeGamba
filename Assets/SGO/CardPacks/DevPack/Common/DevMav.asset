@@ -15,6 +15,6 @@ MonoBehaviour:
   cardName: Maverick the Dev
   cardDescription: MaverickSpore, the developer, making games in his free time
   cardImage: {fileID: 0}
-  cardCost: 10
   cardID: 0
   cardRarity: 1
+  cardSpawnEffect: {fileID: 7400000, guid: ddaca8cdeeabcb844980d8a919f7e287, type: 2}

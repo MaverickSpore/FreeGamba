@@ -24,4 +24,5 @@ public class CardController : MonoBehaviour
         if (ID != null)
             ID.text = Card.CardID;
     }
+    public SGOCard GetCard() => Card;
 }

@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -9,7 +10,8 @@ public class CardPackController : MonoBehaviour
     [SerializeField] private Image CardPackImage;
     [SerializeField] private SGOCardPack DefaultCardPack;
 
-    Dictionary<CardRarities, int> TimesSpawned;
+    float WaitTime = 0.5f; // Time to wait between spawning cards
+
     public void Initialize(SGOCardPack cardPack)
     {
         CardPack = cardPack;
@@ -21,7 +23,6 @@ public class CardPackController : MonoBehaviour
         {
             Debug.LogWarning("CardPackImage or CardPack.Image is not assigned.");
         }
-        TimesSpawned = new Dictionary<CardRarities, int>();
 
     }
     // input action for opening a card pack
@@ -32,28 +33,47 @@ public class CardPackController : MonoBehaviour
         {
             CardPack = DefaultCardPack;
         }
-
-        for (int i = 0; i < CardPack.CardCount; i++)
+        gameObject.transform.SetParent(null);
+        StartCoroutine(SpawnCards());
+    }
+    private IEnumerator SpawnCards()
+    {
+        if (gameObject.TryGetComponent<Button>(out var button))
         {
-            SGOCard randomCard = GetRandomCardFromPack();
-            if (randomCard != null && OpenPacksManager.Instance != null)
+            button.interactable = false; // Disable the button to prevent multiple clicks
+        }
+        if (OpenPacksManager.Instance != null)
+        {
+            OpenPacksManager.Instance.CardsSpawning = true;
+            for (int i = 0; i < CardPack.CardCount; i++)
             {
-                TimesSpawned[randomCard.CardRarity] = TimesSpawned.ContainsKey(randomCard.CardRarity) ? TimesSpawned[randomCard.CardRarity] + 1 : 1;
-
-
-                OpenPacksManager.Instance.SpawnCard(randomCard);
+                GameObject newCard = null;
+                SGOCard randomCard = GetRandomCardFromPack();
+                if (randomCard != null)
+                {
+                    if (randomCard.CardSpawnEffect != null)
+                    {
+                        WaitTime = randomCard.CardSpawnEffect.length; // Set WaitTime to the length of the spawn effect
+                    }
+                    else
+                    {
+                        WaitTime = 0.5f; // Default wait time if no spawn effect is assigned
+                    }
+                    newCard = OpenPacksManager.Instance.SpawnCard(randomCard);
+                }
+                while (WaitTime > 0)
+                {
+                    WaitTime -= Time.deltaTime;
+                    // Wait for the next frame
+                    yield return null;
+                }
+                if (newCard != null)
+                {
+                    OpenPacksManager.Instance.CardAnimationEnded(newCard);
+                }
             }
+            OpenPacksManager.Instance.CardsSpawning = false;
         }
-
-        // Sort the dictionary by rarity for better readability
-        var sortedTimesSpawned = new List<KeyValuePair<CardRarities, int>>(TimesSpawned);
-        sortedTimesSpawned.Sort((x, y) => x.Key.CompareTo(y.Key));
-        foreach (var rarity in sortedTimesSpawned)
-        {
-            Debug.Log($"Spawned {rarity.Value} cards of rarity {rarity.Key}, which is {rarity.Value / (float)CardPack.CardCount * 100:F2}% of the total.");
-        }
-
-
         Destroy(gameObject); // Destroy the card pack after opening
     }
 

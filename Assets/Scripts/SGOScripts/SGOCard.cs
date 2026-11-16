@@ -8,9 +8,11 @@ public class SGOCard : ScriptableObject
     [SerializeField] Sprite cardImage;
     [SerializeField] string cardID;
     [SerializeField] CardRarities cardRarity;
+    [SerializeField] AnimationClip cardSpawnEffect;
     public string CardName => cardName;
     public string CardDescription => cardDescription;
     public Sprite CardImage => cardImage;
     public string CardID => cardID;
     public CardRarities CardRarity => cardRarity;
+    public AnimationClip CardSpawnEffect => cardSpawnEffect;
 }
