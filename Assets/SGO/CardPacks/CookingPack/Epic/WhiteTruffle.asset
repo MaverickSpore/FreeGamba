@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aab6738ac52bf274cbaaa30a848dc24a, type: 3}
   m_Name: WhiteTruffle
   m_EditorClassIdentifier: Assembly-CSharp::SGOCard
-  cardName: 
-  cardDescription: 
+  cardName: White Truffle
+  cardDescription: Worth its weight in flavor.
   cardImage: {fileID: 0}
   cardID: C71
   cardRarity: 4
-  cardSpawnEffect: {fileID: 0}
+  cardSpawnEffect: {fileID: 7400000, guid: ddaca8cdeeabcb844980d8a919f7e287, type: 2}

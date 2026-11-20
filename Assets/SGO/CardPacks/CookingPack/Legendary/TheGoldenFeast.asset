@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aab6738ac52bf274cbaaa30a848dc24a, type: 3}
   m_Name: TheGoldenFeast
   m_EditorClassIdentifier: Assembly-CSharp::SGOCard
-  cardName: 
-  cardDescription: 
+  cardName: The Golden Feast
+  cardDescription: A banquet fit for the gods. No leftovers permitted.
   cardImage: {fileID: 0}
-  cardID: 
-  cardRarity: 0
-  cardSpawnEffect: {fileID: 0}
+  cardID: C76
+  cardRarity: 5
+  cardSpawnEffect: {fileID: 7400000, guid: ddaca8cdeeabcb844980d8a919f7e287, type: 2}
